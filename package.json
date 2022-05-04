@@ -1,5 +1,5 @@
 {
-  "name": "wirehouse-management-clint",
+  "name": "warehouse-management-clint",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
