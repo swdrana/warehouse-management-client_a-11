@@ -19,6 +19,49 @@
   opacity: 1 !important;
   background-color: #14a42c !important;
 }
+/* carousel-caption */
+.carousel-caption{
+    background-color: #14a42c53; 
+    /* #80808083 */
+    bottom: 30% !important;
+    animation: leftToRight 1.5s 1 ease-in;
+    width: 40%;
+    border-radius: 20px;
+    height: 45%;
+    margin: 0 auto;
+}
+@keyframes leftToRight {
+    0%{
+        left: -130%;
+    }
+    100%{
+        left: 15%;
+    }
+}
+.carousel-caption h5 , p{
+    animation: rightToLeft 2s 1 ease-in;
+    /* animation-delay: 1s; */
+    opacity: 1 !important;
+    white-space: nowrap;
+}
+.carousel-caption h5{
+    font-size: 40px;
+    color: #ff0000 !important;
+}
+.carousel-caption p{
+    font-size: 20px;
+    color: #000 !important;
+    text-shadow:#fff 0px 0px 15px;
+}
+@keyframes rightToLeft {
+    0%{
+        margin-left: 100%;
+    }
+    100%{
+        margin-left: 0%;
+        visibility: visible;
+    }
+}
 
 /*  ===================================  *\
 ||      Carousel Style End Here          ||
