@@ -1,29 +1,58 @@
-.carousel-indicators{
-    height: 100px;    
-    justify-content: space-around !important;
+/*  ========================================    *\
+        Carousel Style Start From Here  
+\*  ========================================    */
+.carousel-indicators {
+  height: 100px;
+  justify-content: space-around !important;
 }
-.carousel-indicators button{
-    font-size: 100px;
+.carousel-indicators button {
+  padding-top: 5%;
+  font-size: 60px;
+  background-color: transparent !important;
+  width: 120px !important;
+  color: #14a42c;
+  opacity: 0.6 !important;
+  justify-content: center;
+}
+.carousel-indicators .active {
+  color: red;
+  opacity: 1 !important;
+  background-color: #14a42c !important;
+}
+
+/*  ===================================  *\
+||      Carousel Style End Here          ||
+||  -----------------------------------  ||
+||      Responsive Style Start           ||
+\*  ===================================  */
+@media only screen and (max-width: 1440px) {
+    /*Tablets [601px -> 1200px]*/
+    .carousel-indicators {
+      height: 50px;
+    }
+    .carousel-indicators button {
+      padding-top: 3%;
+    }
+  }
+@media only screen and (max-width: 1200px) {
+  /*Tablets [601px -> 1200px]*/
+  .carousel-indicators {
+    height: 30px;
+  }
+  .carousel-indicators button {
+    padding-top: 3%;
+    font-size: 30px;
     background-color: transparent !important;
-    width: 120px !important;
+    width: 70px !important;
     color: #14a42c;
     opacity: 0.6 !important;
+  }
 }
-.carousel-indicators .active{
-    color: red;
-    opacity: 1 !important;
-    background-color: #14a42c !important;
-}
-@media only screen and (max-width: 1200px){
-    /*Tablets [601px -> 1200px]*/
-    .carousel-indicators{
-        height: 50px;    
+@media only screen and (max-width: 600px) {
+    .carousel-indicators {
+      height: 10px;
     }
-    .carousel-indicators button{
-        font-size: 50px;
-        background-color: transparent !important;
-        width: 70px !important;
-        color: #14a42c;
-        opacity: 0.6 !important;
+    .carousel-indicators button {
+      font-size: 30px;
     }
-}
+  }

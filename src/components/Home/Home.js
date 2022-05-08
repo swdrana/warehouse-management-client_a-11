@@ -2,9 +2,9 @@ import React from "react";
 import "./Home.css";
 import LoadProducts from "../../hooks/LoadProducts";
 import Product from "../Product/Product";
-import banner1 from "../../img/warehouse-industry.jpg";
-import banner2 from "../../img/courier-with-parcel.jpg";
-import banner3 from "../../img/warehouse-workers.jpg";
+import banner1 from "../../img/New Project (1).png";
+import banner2 from "../../img/New Project (2).png";
+import banner3 from "../../img/New Project (3).png";
 import { MdOutlineMapsHomeWork } from "react-icons/md";
 import { FiShoppingBag , FiTruck } from "react-icons/fi";
 const Home = () => {
