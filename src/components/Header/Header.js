@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Button,
   Container,
   Nav,
   Navbar,
@@ -10,7 +11,7 @@ const Header = () => {
   return (
     <div>
       <div className="container">
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="" expand="lg">
           <Container fluid>
             <Navbar.Brand to="/" as={Link}>
               <img src={logo} alt="" />
@@ -24,13 +25,12 @@ const Header = () => {
               >
               </Nav>
               <Nav className="d-flex">
-                <Nav.Link to="/about" as={Link}>About</Nav.Link>
-                <Nav.Link to="/blogs" as={Link}>Blogs</Nav.Link>
                 <Nav.Link to="/manage-items" as={Link}>Manage Items</Nav.Link>
                 <Nav.Link to="/add-item" as={Link}>Add Item</Nav.Link>
                 <Nav.Link to="/my-items" as={Link}>My items</Nav.Link>
-                <Nav.Link to={`${false ? "log-out":"log-in"} `} as={Link}>Login</Nav.Link>
-                {/* <Button>{`${true ? "Log-out":"Log-in"} `}</Button> */}
+                <Nav.Link to="/about" as={Link}>About</Nav.Link>
+                <Nav.Link to="/blogs" as={Link}>Blogs</Nav.Link>
+                <Button >{`${false ? "Log-out":"Log-in"} `}</Button>
               </Nav>
             </Navbar.Collapse>
           </Container>
