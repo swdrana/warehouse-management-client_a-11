@@ -101,7 +101,6 @@ const Home = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-      {/* <img className="img-fluid" src={banner} alt="" /> */}
       <div className="container mx-auto my-2 row">
         {Products.map((product) => {
           return <Product key={product.id} product={product}></Product>;
