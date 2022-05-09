@@ -72,32 +72,40 @@
 \*  ===================================  */
 
 .support {
-  height: 320px;
+  min-height: 320px;
   background-image: url(../../img/office-bg.jpg);
   background-attachment: fixed;
-  background-repeat:no-repeat;
-  background-size: cover; 
+  background-repeat: no-repeat;
+  background-size: cover;
   /* filter: blur(8px); */
 }
-.support .container, .support .make-dark, .support .row{
+.support .container,
+.support .make-dark,
+.support .row {
   height: 100%;
 }
-.support .make-dark{
+.support .make-dark {
   width: 100%;
   background-color: #31456d88;
 }
-.support button{
+.support button {
   border: 2px solid transparent;
   background-color: rgba(0, 236, 0, 0.779);
   color: rgb(91, 0, 0);
   text-shadow: 0px 0px 14px black;
   font-weight: bold;
 }
-.support button:hover{
+.support button:hover {
   border: 2px solid red;
   background-color: transparent;
 }
-
+.support .img-area {
+  justify-content: center;
+  display: flex;
+}
+.support .img-area img{
+  height: 320px;
+}
 /*  ===================================  *\
 ||      Support Style End Here          ||
 ||  -----------------------------------  ||

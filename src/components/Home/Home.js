@@ -7,6 +7,8 @@ import banner2 from "../../img/New Project (2).png";
 import banner3 from "../../img/New Project (3).png";
 import { MdOutlineMapsHomeWork } from "react-icons/md";
 import { FiShoppingBag, FiTruck } from "react-icons/fi";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import img from '../../img/Businessman-pana.svg'
 import { Button } from "react-bootstrap";
 const Home = () => {
   const [Products] = LoadProducts();
@@ -114,13 +116,13 @@ const Home = () => {
         <div className="make-dark">
         <div className="container ">
         <div className="row d-flex align-items-center text-light">
-            <div className="col-md-7">
+            <div className="col-md-7 p-5">
                 <h2>Reach your destination 100% sure and safe</h2>
                 <p>We designed a detailed homepage layouts that will fit any transportation industry size. We will take care of your cargo or your passenger and deliver them safe and on time!</p>
-                <Button>Contact Now </Button>
+                <Button>Contact Now <AiOutlineArrowRight/></Button>
             </div>
-            <div className="col-md-5">
-
+            <div className="col-md-5 img-area">
+                <img src={img} alt="" />
             </div>
           </div>
         </div>
