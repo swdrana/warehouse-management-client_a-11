@@ -8,7 +8,9 @@ import banner3 from "../../img/New Project (3).png";
 import { MdOutlineMapsHomeWork } from "react-icons/md";
 import { FiShoppingBag, FiTruck } from "react-icons/fi";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import img from '../../img/Businessman-pana.svg'
+import img from "../../img/Businessman-pana.svg";
+import signature from "../../img/signature.png";
+import deal from "../../img/Business deal-bro.svg";
 import { Button } from "react-bootstrap";
 const Home = () => {
   const [Products] = LoadProducts();
@@ -56,7 +58,8 @@ const Home = () => {
             <div className="carousel-caption d-none d-md-block">
               <h5>Warehousing Storage</h5>
               <p>
-              You can opt for dedicated platforms from the advantages related to shared surfaces, resources and equipment.
+                You can opt for dedicated platforms from the advantages related
+                to shared surfaces, resources and equipment.
               </p>
             </div>
           </div>
@@ -65,8 +68,8 @@ const Home = () => {
             <div className="carousel-caption d-none d-md-block">
               <h5>Transatlantic Delivery</h5>
               <p>
-              Combined rail road transport is particularly well suited to the shipping of hazardous goods since it reduces risk.
-
+                Combined rail road transport is particularly well suited to the
+                shipping of hazardous goods since it reduces risk.
               </p>
             </div>
           </div>
@@ -75,7 +78,8 @@ const Home = () => {
             <div className="carousel-caption d-none d-md-block">
               <h5>Sea & Ocean Delivery</h5>
               <p>
-              Sea-Air cargo is the last to be loaded and the first to be unloaded, reducing transshipment times and risk.
+                Sea-Air cargo is the last to be loaded and the first to be
+                unloaded, reducing transshipment times and risk.
               </p>
             </div>
           </div>
@@ -105,8 +109,40 @@ const Home = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </section>
+      {/* Welcome Section  */}
+      <section className="welcome my-5 px-4">
+        <div className="container">
+          <div className="row d-flex align-items-center">
+            <div className="col-md-6">
+              <h2>WELCOME TO OUR WEBSITE!</h2>
+              <p>
+                Transcargo makes business flow. As one of the world’s leading
+                non-asset-based supply chain management companies, we design and
+                implement industry-leading solutions in both freight management.
+              </p>
+              <p>
+                Over 42,000 dedicated employees, working in 17 regional clusters
+                around the globe, deliver operational excellence — to provide
+                viable answers to the most challenging supply chain questions.
+              </p>
+              <div className="row">
+                <div className="col-md-6">
+                  <p><strong>MATT GARDNER</strong></p>
+                  <small>Chairman & Chief Executive Officer</small>
+                </div>
+                <div className="col-md-6  d-flex justify-content-center">
+                  <img className="signature" src={signature} alt="" />
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 d-flex justify-content-center">
+              <img className="deal" src={deal} alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
       {/* product section  */}
-      <section className="container mx-auto my-2 row">
+      <section className="container mx-auto my-3 row">
         {Products.map((product) => {
           return <Product key={product.id} product={product}></Product>;
         })}
@@ -114,18 +150,24 @@ const Home = () => {
       {/* support section  */}
       <section className="support w-100 ">
         <div className="make-dark">
-        <div className="container ">
-        <div className="row d-flex align-items-center text-light">
-            <div className="col-md-7 p-5">
+          <div className="container ">
+            <div className="row d-flex align-items-center text-light">
+              <div className="col-md-7 p-5">
                 <h2>Reach your destination 100% sure and safe</h2>
-                <p>We designed a detailed homepage layouts that will fit any transportation industry size. We will take care of your cargo or your passenger and deliver them safe and on time!</p>
-                <Button>Contact Now <AiOutlineArrowRight/></Button>
-            </div>
-            <div className="col-md-5 img-area">
+                <p>
+                  We designed a detailed homepage layouts that will fit any
+                  transportation industry size. We will take care of your cargo
+                  or your passenger and deliver them safe and on time!
+                </p>
+                <Button>
+                  Contact Now <AiOutlineArrowRight />
+                </Button>
+              </div>
+              <div className="col-md-5 img-area">
                 <img src={img} alt="" />
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </section>
     </div>

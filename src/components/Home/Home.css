@@ -68,7 +68,22 @@
 /*  ===================================  *\
 ||      Carousel Style End Here          ||
 ||  -----------------------------------  ||
-||      Support Style Start           ||
+||        Welcome Style Start            ||
+\*  ===================================  */
+.welcome{
+  background-color: #14a42c70;
+}
+.welcome img.deal{
+  height: 500px;
+}
+.welcome img.signature{
+  height: 50px;
+}
+
+/*  ===================================  *\
+||      Welcome Style End Here          ||
+||  -----------------------------------  ||
+||        Support Style Start            ||
 \*  ===================================  */
 
 .support {

@@ -12,7 +12,7 @@ const Footer = () => {
             target="_blank" rel="noreferrer"
           >
             swdRana
-          </a>{" "}
+          </a>
           .
         </span>
         <p class="text-end pe-3 m-0">
