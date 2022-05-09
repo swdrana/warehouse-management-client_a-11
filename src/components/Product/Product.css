@@ -1,0 +1,66 @@
+.product{
+    /* margin: 10px !important; */
+    /* border: 1px solid red; */
+}
+.product .img{
+    overflow: hidden;
+    height: 200px;
+}
+.product img{
+    /* height: 250px; */
+    width: 100%;
+    margin-bottom: 10px;
+    transition: 1s;
+}
+
+.product:hover img{
+    transform: scale(1.2) rotate(5deg);
+}
+
+.product .product-info{
+    border-top: 1px solid green;
+}
+.product h3{
+    transition: 0.3s;
+    right: 10%;
+    bottom: 35%;
+    background: #31456dcf ;
+    color: white;
+    font-size: 20px;
+    padding: 2%;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px red;
+}
+.product h3:hover{
+    background: #31456d;
+    color: whitesmoke;
+    padding: 1%;
+    text-shadow: 0px 0px 16px black;
+    transform: scale(1.2);
+    box-shadow: 0px 0px 20px green;
+}
+
+
+
+/* overlay  */
+.overlay{
+    position: absolute;
+    background: #31456d30;
+    width: 150%;
+    height: 150%;
+    z-index: 33;
+    top: 0;
+    transition: .5s;
+}
+.overlay-a{
+    transform: rotate(26deg) translate(-7%, 50%);
+}
+.overlay-b{
+    transform: rotate(206deg) translate(24%, 50%);
+}
+.product:hover .overlay-a{
+    transform: rotate(26deg) translate(-7%, 120%);
+}
+.product:hover  .overlay-b{
+    transform: rotate(206deg) translate(24%, 120%);
+}

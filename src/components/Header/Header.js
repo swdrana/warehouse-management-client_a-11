@@ -5,11 +5,12 @@ import {
   Nav,
   Navbar,
 } from "react-bootstrap";
+import './Header.css';
 import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
 const Header = () => {
   return (
-    <div>
+    <div className="top-nav">
       <div className="container">
         <Navbar bg="" expand="lg">
           <Container fluid>
