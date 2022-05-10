@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable jsx-a11y/iframe-has-title */
+import React, { useState } from "react";
 import "./Home.css";
 import LoadProducts from "../../hooks/LoadProducts";
 import Product from "../Product/Product";
@@ -11,8 +12,12 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import img from "../../img/Businessman-pana.svg";
 import signature from "../../img/signature.png";
 import deal from "../../img/Business deal-bro.svg";
-import { Button } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 const Home = () => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const [Products] = LoadProducts();
   return (
     <div>
@@ -115,7 +120,7 @@ const Home = () => {
           <div className="row d-flex align-items-center">
             <div className="col-md-6">
               <h2>WELCOME TO OUR WEBSITE!</h2>
-              <p>
+              <p className="pt-3">
                 Transcargo makes business flow. As one of the world’s leading
                 non-asset-based supply chain management companies, we design and
                 implement industry-leading solutions in both freight management.
@@ -125,9 +130,11 @@ const Home = () => {
                 around the globe, deliver operational excellence — to provide
                 viable answers to the most challenging supply chain questions.
               </p>
-              <div className="row">
+              <div className="row pt-3">
                 <div className="col-md-6">
-                  <p><strong>MATT GARDNER</strong></p>
+                  <p className="m-0">
+                    <strong>swdRana</strong>
+                  </p>
                   <small>Chairman & Chief Executive Officer</small>
                 </div>
                 <div className="col-md-6  d-flex justify-content-center">
@@ -135,8 +142,21 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6 d-flex justify-content-center">
+            <div className="col-md-6 d-flex justify-content-center position-relative">
               <img className="deal" src={deal} alt="" />
+              <button class="play-btn" onClick={handleShow}></button>
+              {/* show hide modal  */}
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton></Modal.Header>
+                <Modal.Body>
+                  <iframe
+                    width="100%"
+                    autoplay="true"
+                    height="345"
+                    src="https://www.youtube.com/embed/452JdnsXM54?allowfullscreen=1&autoplay=1&loop=1&controls=0"
+                  ></iframe>
+                </Modal.Body>
+              </Modal>
             </div>
           </div>
         </div>
