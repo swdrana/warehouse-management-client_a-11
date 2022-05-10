@@ -8,7 +8,10 @@ import banner2 from "../../img/New Project (2).png";
 import banner3 from "../../img/New Project (3).png";
 import { MdOutlineMapsHomeWork } from "react-icons/md";
 import { FiShoppingBag, FiTruck } from "react-icons/fi";
+import { FaTasks } from "react-icons/fa";
+import { IoMdGitNetwork } from "react-icons/io";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { RiTeamLine } from "react-icons/ri";
 import img from "../../img/Businessman-pana.svg";
 import signature from "../../img/signature.png";
 import deal from "../../img/Business deal-bro.svg";
@@ -115,10 +118,10 @@ const Home = () => {
         </button>
       </section>
       {/* Welcome Section  */}
-      <section className="welcome my-5 px-4">
+      <section className="welcome my-5 px-5">
         <div className="container">
-          <div className="row d-flex align-items-center">
-            <div className="col-md-6">
+          <div className="row d-flex align-items-center ">
+            <div className="col-md-6 p-5 pe-0">
               <h2>WELCOME TO OUR WEBSITE!</h2>
               <p className="pt-3">
                 Transcargo makes business flow. As one of the world’s leading
@@ -186,6 +189,35 @@ const Home = () => {
               <div className="col-md-5 img-area">
                 <img src={img} alt="" />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Counter Section */}
+      <section className="counter my-5">
+        <div className="container px-5">
+          <h6 className="text-center">WHY CHOOSE US</h6>
+          <h2 className="text-center">Our Advantages</h2>
+          <div className="counter-info row text-center mt-5">
+            <div className="col-md-3 col-sm-6">
+              <FaTasks color="green" size="50px"/>
+              <h2 className="my-4">2154</h2>
+              <p>Project Done</p>
+            </div>
+            <div className="col-md-3 col-sm-6">
+              <IoMdGitNetwork color="green"  size="50px"/>
+              <h2 className="my-4">162</h2>
+              <p>Clients Worldwide</p>
+            </div>
+            <div className="col-md-3 col-sm-6">
+              <FiTruck color="green"  size="50px"/>
+              <h2 className="my-4">78</h2>
+              <p>Owned Vehicles</p>
+            </div>
+            <div className="col-md-3 col-sm-6">
+              <RiTeamLine color="green"  size="50px"/>
+              <h2 className="my-4">245</h2>
+              <p>People in Team</p>
             </div>
           </div>
         </div>
