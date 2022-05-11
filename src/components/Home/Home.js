@@ -147,7 +147,7 @@ const Home = () => {
             </div>
             <div className="col-md-6 d-flex justify-content-center position-relative">
               <img className="deal" src={deal} alt="" />
-              <button class="play-btn" onClick={handleShow}></button>
+              <button className="play-btn" onClick={handleShow}></button>
               {/* show hide modal  */}
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton></Modal.Header>
@@ -165,9 +165,11 @@ const Home = () => {
         </div>
       </section>
       {/* product section  */}
-      <section className="container mx-auto my-3 row">
+      <section className="container mx-auto my-5 row">
+          <h6 className="text-center">WANT TO SEE</h6>
+          <h2 className="text-center mb-5">Our Services</h2>
         {Products.map((product) => {
-          return <Product key={product.id} product={product}></Product>;
+          return <Product key={product._id} product={product}></Product>;
         })}
       </section>
       {/* support section  */}

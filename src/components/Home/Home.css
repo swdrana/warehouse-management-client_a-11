@@ -77,9 +77,7 @@
   background-attachment: fixed;
   background-size: cover;
 }
-.welcome:hover{
-  /* filter: blur(0.5px); */
-}
+
 .welcome img.deal{
   height: 500px;
 }

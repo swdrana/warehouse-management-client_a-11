@@ -1,41 +1,41 @@
 [
   {
-    "id": 1,
+    "_id": 1,
     "name": "ICT",
     "prices": 10000,
     "img": "https://i.ibb.co/g3XCp8T/image.png",
     "text": "Typically the 10 ICT (Information Communication Tech.) Basics courses span digital technologies associated with web development, multi-media, word processing, chart, database, Internet devices, cyber security, video games, and computer coding."
   },
   {
-    "id": 2,
+    "_id": 2,
     "name": "Mathematics",
     "prices": 8000,
     "img": "https://i.ibb.co/3ChD4Mw/image.png",
     "text": "Issues in mathematics that many educated person should know to process, evaluate, and understand the numerical and graphical information in our society."
   },
   {
-    "id": 3,
+    "_id": 3,
     "name": "Physics",
     "prices": 4000,
     "img": "https://i.ibb.co/wBpspLF/image.png",
     "text": "A great intro to the scientific method and some major in physics, including makes and motion, energy, gravity, electricity and magnetism, thermodynamics, and optics. Hands-on activities and projects are an important part of this course which aims to prepare future teachers to bring research activities to their classes. 3 lecture hrs and 1 75-minute activity period."
   },
   {
-    "id": 4,
+    "_id": 4,
     "name": "MS Word",
     "prices": 2000,
     "img": "https://i.ibb.co/wp5Wh5s/image.png",
     "text": "Individuals will learn to use Microsoft Phrase to produce professional-looking documents. Features integrated are typing, format, editing, document space, margins, page numbering and saving a document."
   },
   {
-    "id": 5,
+    "_id": 5,
     "name": "MS Excel",
     "prices": 2000,
     "img": "https://5.imimg.com/data5/KO/UM/GLADMIN-66275087/ms-excel-basic-computer-courses-500x500.png",
     "text": "This particular training provides all of the tools necessary in order to create and make use of basic spreadsheets. Individuals should receive an summary of the user interface and learn the particular various techniques for getting into and editing information. Additionally, participants will certainly learn the numerous ways to create easy formulas."
   },
   {
-    "id": 6,
+    "_id": 6,
     "name": "Data Structures & Algorithms",
     "prices": 15000,
     "img": "https://i.ibb.co/TcjQ97H/image.png",

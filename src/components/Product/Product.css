@@ -23,7 +23,7 @@
 .product h3{
     transition: 0.3s;
     right: 10%;
-    bottom: 35%;
+    top:30%;
     background: #31456dcf ;
     color: white;
     font-size: 20px;
@@ -63,4 +63,48 @@
 }
 .product:hover  .overlay-b{
     transform: rotate(206deg) translate(24%, 120%);
+}
+
+
+
+
+
+
+
+
+
+.product-description{
+    height: 100px;
+    overflow: hidden;
+    /* background-color: red; */
+}
+
+.details-info {
+    display: flex !important;
+    justify-content: center !important;
+}
+.details-info p{
+    font-size: 14px;
+}
+.details-info button{
+    padding: 5px 2px;
+}
+.details-info p{
+    font-size: 14px;
+}
+.details-info div{
+    height: 50px;
+    border-bottom: 1px dotted gray;
+    filter: blur(0px);
+    transition: 0.5s;
+}
+.details-info div:hover{
+    filter: blur(0.6px);
+}
+.details-info div:nth-child(n){
+    border-right: 1px dotted gray;
+
+}
+.details-info div:last-child{
+    border-right: 0px dotted gray;
 }
