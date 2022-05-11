@@ -49,6 +49,9 @@ const AddItem = () => {
         <Form.Group className="mb-3" controlId="formBasicQuantity">
           <Form.Control type="number" placeholder="Quantity" min="1" />
         </Form.Group>
+        <Form.Group className="mb-3" controlId="pricePerItem">
+          <Form.Control type="number" placeholder="Price of each item" min="0" />
+        </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicSupplier">
           <Form.Control type="text" placeholder="Supplier Name" />
         </Form.Group>

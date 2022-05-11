@@ -4,8 +4,16 @@ import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { MdPersonOutline } from "react-icons/md";
 import { MdUpdate } from "react-icons/md";
 import { Button } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
+
 const Product = ({ product }) => {
-  const { _id, name, email, imgLink, quantity, description } = product;
+  const { _id, name, email, imgLink, quantity, pricePerItem, supplierName, description } = product;
+  
+  // for navigate spacific id 
+  const navigate = useNavigate();
+  const goToProductDetails = (id) =>{
+    navigate(`/update/${id}`);
+  }
   return (
     <div className="col-md-4 col-sm-6 mx-auto product position-relative">
       <div className="img w-100 position-relative">
@@ -22,29 +30,29 @@ const Product = ({ product }) => {
           <div className="col-md-4 d-flex justify-content-center p-1">
               <MdOutlineProductionQuantityLimits size="40px" color="red"/>
               <p className="p-0"><strong className="text-danger">Quantity</strong>
-                <p className="p-0 text-danger">
+                <span className="p-0 text-danger d-block">
                   {quantity}
-                </p>
+                </span>
               </p>
           </div>
           <div className="col-md-4 d-flex d-flex justify-content-center p-1">
               <MdPersonOutline size="40px" color="green"/>
               <p className="text-success"><strong>Supplier</strong>
-                <p>
-                  {quantity}
-                </p>
+                <span className="d-block">
+                  {supplierName}
+                </span>
               </p>
           </div>
           <div className="col-md-4 d-flex d-flex justify-content-center p-1">
               <MdUpdate size="35px" color="#0d6efd"/>
               <p className="ms-2">
-                <Button>Update</Button>
+                <Button onClick={()=>goToProductDetails(_id)}>Update</Button>
               </p>
           </div>
         </div>
       </div>
       <h3 className="position-absolute">
-        $ {quantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+        $ {pricePerItem?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
       </h3>
     </div>
   );
