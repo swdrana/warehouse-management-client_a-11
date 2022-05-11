@@ -5,25 +5,25 @@ import { MdPersonOutline } from "react-icons/md";
 import { MdUpdate } from "react-icons/md";
 import { Button } from "react-bootstrap";
 const Product = ({ product }) => {
-  const { _id, name, text, prices } = product;
+  const { _id, name, email, imgLink, quantity, description } = product;
   return (
     <div className="col-md-4 col-sm-6 mx-auto product position-relative">
       <div className="img w-100 position-relative">
-        <img src={product.img} className="img-fluid" alt="" />
+        <img src={imgLink} className="img-fluid" alt="" />
         <div className="overlay-a overlay"></div>
         <div className="overlay-b overlay"></div>
       </div>
       <div className="product-info">
         <h4 className="text-start mt-3">{name}</h4>
-        <p className="text-start product-description" title={text}>
-          {text.length > 180 ? text.slice(0, 180) + "..." : text}
+        <p className="text-start product-description" title={description}>
+          {description.length > 180 ? description.slice(0, 180) + "..." : description}
         </p>
         <div className="details-info w-100 row m-0 mb-4 text-center " >
           <div className="col-md-4 d-flex justify-content-center p-1">
               <MdOutlineProductionQuantityLimits size="40px" color="red"/>
               <p className="p-0"><strong className="text-danger">Quantity</strong>
                 <p className="p-0 text-danger">
-                  {prices}
+                  {quantity}
                 </p>
               </p>
           </div>
@@ -31,7 +31,7 @@ const Product = ({ product }) => {
               <MdPersonOutline size="40px" color="green"/>
               <p className="text-success"><strong>Supplier</strong>
                 <p>
-                  {prices}
+                  {quantity}
                 </p>
               </p>
           </div>
@@ -44,7 +44,7 @@ const Product = ({ product }) => {
         </div>
       </div>
       <h3 className="position-absolute">
-        $ {prices.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+        $ {quantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
       </h3>
     </div>
   );
