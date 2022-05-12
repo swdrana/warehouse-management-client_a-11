@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import {RiUserReceivedLine} from 'react-icons/ri'
+import {HiOutlineMail} from 'react-icons/hi'
+import {MdPersonOutline, MdProductionQuantityLimits} from 'react-icons/md'
+import {FcAddImage, FcCurrencyExchange, FcMultipleDevices} from 'react-icons/fc'
+import {BsPencilSquare} from 'react-icons/bs'
 
 const AddItem = () => {
   const [name, setName] = useState("");
@@ -42,25 +47,32 @@ const AddItem = () => {
     <div>
         <h2 className="text-center">Add New Item</h2>
       <Form className="w-50 mx-auto my-5" onSubmit={handelAddItem}>
-        <Form.Group className="mb-3" controlId="formBasicName">
+        <Form.Group className="mb-3 d-flex" controlId="formBasicName">
+            <RiUserReceivedLine size="35px" className="me-4" color="gray"/>
           <Form.Control type="text" placeholder="Name" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3 d-flex" controlId="formBasicEmail">
+            <HiOutlineMail size="35px" className="me-4" color="gray"/>
           <Form.Control type="email" placeholder="Email" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="productName">
+        <Form.Group className="mb-3 d-flex" controlId="productName">
+            <FcMultipleDevices size="35px" className="me-4" color="black"/>
           <Form.Control type="text" placeholder="Product Name" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicQuantity">
+        <Form.Group className="mb-3 d-flex" controlId="formBasicQuantity">
+            <MdProductionQuantityLimits size="35px" className="me-4" color="red"/>
           <Form.Control type="number" placeholder="Quantity" min="1" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="pricePerItem">
+        <Form.Group className="mb-3 d-flex" controlId="pricePerItem">
+            <FcCurrencyExchange size="35px" className="me-4" color="black"/>
           <Form.Control type="number" placeholder="Price of each item" min="0" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicSupplier">
+        <Form.Group className="mb-3 d-flex" controlId="formBasicSupplier">
+            <MdPersonOutline size="35px" className="me-4" color="green"/>
           <Form.Control type="text" placeholder="Supplier Name" />
         </Form.Group>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3 d-flex">
+            <BsPencilSquare size="35px" className="me-4" color="grey"/>
           <textarea
             name=""
             id="formBasicDescription"
@@ -69,13 +81,15 @@ const AddItem = () => {
             placeholder="Description"
           ></textarea>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="imgLink">
+        <Form.Group className="mb-3 d-flex" controlId="imgLink">
+            <FcAddImage size="35px" className="me-4" color="black"/>
           <Form.Control type="text" placeholder="Image Link" />
         </Form.Group>
-
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <div className="d-flex justify-content-center">
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </div>
       </Form>
     </div>
   );

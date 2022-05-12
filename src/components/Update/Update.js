@@ -79,7 +79,6 @@ const Update = () => {
         <div className="row d-flex align-items-center">
 
         <Product key={product._id} product={product}></Product>
-        {console.log(product)}
       <Form onSubmit={handelUpdate} className="col-md-8 mt-5 px-5 mx-auto">
         <Form.Group className="mb-2 d-flex" controlId="formBasicName">
             <RiUserReceivedLine size="35px" className="me-4" color="gray"/>
