@@ -5,6 +5,7 @@ import paginationFactory from "react-bootstrap-table2-paginator";
 import LoadProducts from "../../hooks/LoadProducts";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import {FcPlus} from 'react-icons/fc';
 const ManageItems = () => {
   const [Products, setProducts] = LoadProducts();
   const columns = [
@@ -47,11 +48,13 @@ const ManageItems = () => {
     handleClose();
   }
   return (
-    <div className="container">
+    <div className="container position-relative">
       <h2 className="text-center my-4">Manage Items</h2>
       {/* <BootstrapTable keyField='_id' data={Products} columns={columns} pagination={paginationFactory()} hover="table-hover" /> */}
 
-      <Table striped bordered hover>
+      <Link className="add-btn" to="/add-item"><FcPlus size="60px"/></Link>
+
+      <Table striped bordered hover className="mb-5">
         <thead>
           <tr className="text-center">
             <th>#</th>
