@@ -7,6 +7,6 @@ const LoadProducts = () => {
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[]);
-    return [Products]
+    return [Products, setProducts]
 }
 export default LoadProducts;

@@ -1,11 +1,12 @@
 import "./ManageItems.css";
 import BootstrapTable from "react-bootstrap-table-next";
-import { Button, Table } from 'react-bootstrap'
+import { Button, Modal, Table } from 'react-bootstrap'
 import paginationFactory from "react-bootstrap-table2-paginator";
 import LoadProducts from "../../hooks/LoadProducts";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 const ManageItems = () => {
-  const [Products] = LoadProducts();
+  const [Products, setProducts] = LoadProducts();
   const columns = [
     { dataField: "productName", text: "Product Name" },
     { dataField: "quantity", text: "Available Quantity" },
@@ -16,6 +17,35 @@ const ManageItems = () => {
     { dataField: "_id", text: "h" },
   ];
   let count = 0;
+
+  // for modal 
+  const [deleteId, setDeleteId] = useState('');
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = (id) => {
+    setShow(true);
+    setDeleteId(id);
+  };
+
+
+  // for delete from database 
+  const handleYes= () =>{
+    // console.log("the delete item id is: ",deleteId);
+    fetch(`http://localhost:8080/deleteProduct/${deleteId}`,{
+      method:'DELETE'
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      // console.log("Deleted Data: ",data);
+      // for remove deleted item from client side 
+      if(data.deletedCount>0){
+        const remaining = Products.filter(product => product._id !== deleteId);
+        setProducts(remaining);
+      }
+    })
+    handleClose();
+  }
   return (
     <div className="container">
       <h2 className="text-center my-4">Manage Items</h2>
@@ -48,11 +78,27 @@ const ManageItems = () => {
                   <td>{supplierName}</td>
                   <td>{description}</td>
                   <td className="text-center"><Link to={`/update/${_id}`}>Edit</Link></td>
-                  <td><Button variant="danger">Delete</Button></td>
+                  <td><Button variant="danger" onClick={()=>handleShow(_id)}>Delete</Button></td>
                 </tr>
             })}
         </tbody>
       </Table>
+
+      {/* Modal for conform delete  */}
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Remove This item</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure? </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            No
+          </Button>
+          <Button variant="primary" onClick={handleYes}>
+            Yes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
