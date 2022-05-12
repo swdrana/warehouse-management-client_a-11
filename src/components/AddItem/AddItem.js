@@ -12,13 +12,14 @@ const AddItem = () => {
     e.preventDefault();
     const name = (e.target.formBasicName.value);
     const email = (e.target[1].value);
-    const quantity = Number.parseInt(e.target[2].value);
-    const pricePerItem = Number.parseInt(e.target[3].value);
-    const supplierName = (e.target[4].value);
-    const description = (e.target[5].value);
-    const imgLink = (e.target[6].value);
+    const productName = (e.target[2].value);
+    const quantity = Number.parseInt(e.target[3].value);
+    const pricePerItem = Number.parseInt(e.target[4].value);
+    const supplierName = (e.target[5].value);
+    const description = (e.target[6].value);
+    const imgLink = (e.target[7].value);
 
-    const item = { name, email, quantity, pricePerItem, supplierName, description,imgLink };
+    const item = { name, email, productName, quantity, pricePerItem, supplierName, description,imgLink };
     console.log(item);
     
     // send data to the server
@@ -46,6 +47,9 @@ const AddItem = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control type="email" placeholder="Email" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="productName">
+          <Form.Control type="text" placeholder="Product Name" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicQuantity">
           <Form.Control type="number" placeholder="Quantity" min="1" />

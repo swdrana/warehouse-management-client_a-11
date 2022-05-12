@@ -7,7 +7,7 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 
 const Product = ({ product }) => {
-  const { _id, name, email, imgLink, quantity, pricePerItem, supplierName, description } = product;
+  const { _id, name, email, productName, imgLink, quantity, pricePerItem, supplierName, description } = product;
   
   // for navigate spacific id 
   const navigate = useNavigate();
@@ -22,9 +22,9 @@ const Product = ({ product }) => {
         <div className="overlay-b overlay"></div>
       </div>
       <div className="product-info">
-        <h4 className="text-start mt-3">{name}</h4>
+        <h4 className="text-start mt-3">{productName}</h4>
         <p className="text-start product-description" title={description}>
-          {description.length > 180 ? description.slice(0, 180) + "..." : description}
+          {description?.length > 180 ? description.slice(0, 180) + "..." : description}
         </p>
         <div className="details-info w-100 row m-0 mb-4 text-center " >
           <div className="col-md-4 d-flex justify-content-center p-1">

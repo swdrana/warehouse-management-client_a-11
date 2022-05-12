@@ -1,6 +1,8 @@
 .product{
     /* margin: 10px !important; */
     /* border: 1px solid red; */
+    max-height: 500px;
+
 }
 .product .img{
     overflow: hidden;
