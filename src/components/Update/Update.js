@@ -28,8 +28,8 @@ const Update = () => {
     const name = e.target[0].value?e.target[0].value:product.name;
     const email = e.target.newEmail.value?e.target.newEmail.value:product.email;
     const productName = e.target.productName.value?e.target.productName.value:product.productName;
-    const quantity = e.target.formBasicQuantity.value?e.target.formBasicQuantity.value:product.quantity;
-    const pricePerItem = e.target.pricePerItem.value?e.target.pricePerItem.value:product.pricePerItem;
+    const quantity = Number.parseInt(e.target.formBasicQuantity.value?e.target.formBasicQuantity.value:product.quantity);
+    const pricePerItem = Number.parseFloat(e.target.pricePerItem.value?e.target.pricePerItem.value:product.pricePerItem);
     const supplierName = e.target.formBasicSupplier.value?e.target.formBasicSupplier.value:product.supplierName;
     const description = e.target.formBasicDescription.value?e.target.formBasicDescription.value:product.description;
     const imgLink = e.target.imgLink.value?e.target.imgLink.value:product.imgLink;
@@ -98,7 +98,7 @@ const Update = () => {
         </Form.Group>
         <Form.Group className="mb-2 d-flex" controlId="pricePerItem">
             <FcCurrencyExchange size="35px" className="me-4" color="black"/>
-          <Form.Control type="number" placeholder="Price of each item" min="0" />
+          <Form.Control type="number" step="any" placeholder="Price of each item" min="0" />
         </Form.Group>
         <Form.Group className="mb-2 d-flex" controlId="formBasicSupplier">
             <MdPersonOutline size="35px" className="me-4" color="green"/>

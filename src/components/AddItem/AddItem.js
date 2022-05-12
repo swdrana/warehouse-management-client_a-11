@@ -19,7 +19,7 @@ const AddItem = () => {
     const email = (e.target[1].value);
     const productName = (e.target[2].value);
     const quantity = Number.parseInt(e.target[3].value);
-    const pricePerItem = Number.parseInt(e.target[4].value);
+    const pricePerItem = Number.parseFloat(e.target[4].value);
     const supplierName = (e.target[5].value);
     const description = (e.target[6].value);
     const imgLink = (e.target[7].value);
@@ -65,7 +65,7 @@ const AddItem = () => {
         </Form.Group>
         <Form.Group className="mb-3 d-flex" controlId="pricePerItem">
             <FcCurrencyExchange size="35px" className="me-4" color="black"/>
-          <Form.Control type="number" placeholder="Price of each item" min="0" />
+          <Form.Control type="number"  step="any" placeholder="Price of each item" min="0" />
         </Form.Group>
         <Form.Group className="mb-3 d-flex" controlId="formBasicSupplier">
             <MdPersonOutline size="35px" className="me-4" color="green"/>

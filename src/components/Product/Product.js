@@ -52,7 +52,8 @@ const Product = ({ product }) => {
         </div>
       </div>
       <h3 className="position-absolute">
-        $ {pricePerItem?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+        {/* $ {pricePerItem?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "} */}
+        $ {pricePerItem?.toLocaleString('hi-IN', { maximumFractionDigits: 2 })}{" "}
       </h3>
     </div>
   );
