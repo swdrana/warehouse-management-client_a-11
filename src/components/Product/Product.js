@@ -15,7 +15,7 @@ const Product = ({ product }) => {
     navigate(`/update/${id}`);
   }
   return (
-    <div className="col-md-4 col-sm-6 mx-auto product position-relative">
+    <div className="col-md-4 col-sm-6 mx-auto product position-relative mb-5">
       <div className="img w-100 position-relative">
         <img src={imgLink} className="img-fluid" alt="" />
         <div className="overlay-a overlay"></div>
