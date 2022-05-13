@@ -1,0 +1,31 @@
+.faq {
+  margin: 20px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 20px;
+}
+.faq h2 {
+  text-align: center;
+}
+.faq p {
+  margin: 15px 10px;
+  text-align: justify;
+}
+.faq table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+  max-width: 800px;
+}
+.faq td,
+.faq th {
+  padding: 1em;
+  background: rgba(255, 166, 0, 0.349);
+  border-bottom: 2px solid white;
+  padding: 10px 20px;
+  width: 50%;
+}
+.faq th {
+  background-color: rgba(250, 100, 0, 0.89);
+}
