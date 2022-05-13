@@ -43,7 +43,7 @@ const Header = () => {
               >
               </Nav>
               <Nav className="d-flex">
-                <Nav.Link to="/manage-items" className={user ? "":"d-none"}  as={Link}>Manage Items</Nav.Link>
+                <Nav.Link to="/manage-items" as={Link}>Manage Items</Nav.Link>
                 <Nav.Link to="/add-item" className={user ? "":"d-none"}  as={Link}>Add Item</Nav.Link>
                 <Nav.Link to="/my-items" className={user ? "":"d-none"} as={Link}>My items</Nav.Link>
                 <Nav.Link to="/about" as={Link}>About</Nav.Link>

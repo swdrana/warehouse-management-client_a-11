@@ -41,7 +41,7 @@ const [user, loading, error] = useAuthState(auth);
   // for delete from database 
   const handleYes= () =>{
     // console.log("the delete item id is: ",deleteId);
-    if(user.email === currentProductEmail){
+    if(user?.email === currentProductEmail){
       fetch(`http://localhost:8080/deleteProduct/${deleteId}`,{
         method:'DELETE'
       })
@@ -55,6 +55,9 @@ const [user, loading, error] = useAuthState(auth);
         }
       })
       toast.success("Delete Success!",{theme: "colored"});
+      handleClose();
+    }else if(user === null){
+      toast.error("You Must Login First!",{theme:"colored"});
       handleClose();
     }else{
       toast.error("You did'nt add this item so, you can't delete!",{theme: "colored"});
