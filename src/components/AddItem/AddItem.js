@@ -7,6 +7,7 @@ import {FcAddImage, FcCurrencyExchange, FcMultipleDevices} from 'react-icons/fc'
 import {BsPencilSquare} from 'react-icons/bs'
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { toast } from "react-toastify";
 
 const AddItem = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -41,7 +42,7 @@ const AddItem = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        alert("Item Added!")
+        toast.success("Item Added!",{theme: "colored"});
       });
 
     e.target.reset();
@@ -60,19 +61,19 @@ const AddItem = () => {
         </Form.Group>
         <Form.Group className="mb-3 d-flex" controlId="productName">
             <FcMultipleDevices size="35px" className="me-4" color="black"/>
-          <Form.Control type="text" placeholder="Product Name" />
+          <Form.Control type="text" placeholder="Product Name" required/>
         </Form.Group>
         <Form.Group className="mb-3 d-flex" controlId="formBasicQuantity">
             <MdProductionQuantityLimits size="35px" className="me-4" color="red"/>
-          <Form.Control type="number" placeholder="Quantity" min="1" />
+          <Form.Control type="number" placeholder="Quantity" min="1" required/>
         </Form.Group>
         <Form.Group className="mb-3 d-flex" controlId="pricePerItem">
             <FcCurrencyExchange size="35px" className="me-4" color="black"/>
-          <Form.Control type="number"  step="any" placeholder="Price of each item" min="0" />
+          <Form.Control type="number"  step="any" placeholder="Price of each item" min="0" required/>
         </Form.Group>
         <Form.Group className="mb-3 d-flex" controlId="formBasicSupplier">
             <MdPersonOutline size="35px" className="me-4" color="green"/>
-          <Form.Control type="text" placeholder="Supplier Name" />
+          <Form.Control type="text" placeholder="Supplier Name" required/>
         </Form.Group>
         <Form.Group className="mb-3 d-flex">
             <BsPencilSquare size="35px" className="me-4" color="grey"/>
@@ -82,11 +83,12 @@ const AddItem = () => {
             style={{ width: "100%", border: "1px solid #ced4da" }}
             rows="10"
             placeholder="Description"
+            required
           ></textarea>
         </Form.Group>
         <Form.Group className="mb-3 d-flex" controlId="imgLink">
             <FcAddImage size="35px" className="me-4" color="black"/>
-          <Form.Control type="text" placeholder="Image Link" />
+          <Form.Control type="text" placeholder="Image Link" required/>
         </Form.Group>
         <div className="d-flex justify-content-center">
           <Button variant="primary" type="submit">

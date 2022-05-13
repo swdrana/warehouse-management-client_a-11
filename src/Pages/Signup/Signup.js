@@ -9,12 +9,11 @@ import auth from "../../firebase.init";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 import Loading from "../Loading/Loading";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
 
-  <ToastContainer />
   const navigate = useNavigate();
   const [isChacked, setIsChacked] = useState(false);
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -26,7 +25,7 @@ const Signup = () => {
   ] = useSendEmailVerification(auth);
   const verifyEmail = async () => {
     await sendEmailVerification();
-    alert("Sent email! Please Verify");
+    toast.info("Sent email! Please Verify",{theme: "colored"});
   };
   const handelForm = async (e) => {
     e.preventDefault();

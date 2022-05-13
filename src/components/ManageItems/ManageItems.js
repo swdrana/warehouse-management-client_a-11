@@ -6,7 +6,11 @@ import LoadProducts from "../../hooks/LoadProducts";
 import { Link } from "react-router-dom";
 import { useReducer, useState } from "react";
 import {FcPlus} from 'react-icons/fc';
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { toast } from "react-toastify";
 const ManageItems = () => {
+const [user, loading, error] = useAuthState(auth);
   const [Products, setProducts] = LoadProducts();
   const columns = [
     { dataField: "productName", text: "Product Name" },
@@ -17,15 +21,19 @@ const ManageItems = () => {
     { dataField: "imgLink", text: "imgLink" },
     { dataField: "_id", text: "h" },
   ];
+
+
+
   let count = 0;
 
   // for modal 
   const [deleteId, setDeleteId] = useState('');
   const [show, setShow] = useState(false);
-
+  const [currentProductEmail, setCurrentProductEmail] = useState('');
   const handleClose = () => setShow(false);
-  const handleShow = (id) => {
+  const handleShow = (id, email) => {
     setShow(true);
+    setCurrentProductEmail(email);
     setDeleteId(id);
   };
 
@@ -33,19 +41,25 @@ const ManageItems = () => {
   // for delete from database 
   const handleYes= () =>{
     // console.log("the delete item id is: ",deleteId);
-    fetch(`http://localhost:8080/deleteProduct/${deleteId}`,{
-      method:'DELETE'
-    })
-    .then(res=>res.json())
-    .then(data=>{
-      // console.log("Deleted Data: ",data);
-      // for remove deleted item from client side 
-      if(data.deletedCount>0){
-        const remaining = Products.filter(product => product._id !== deleteId);
-        setProducts(remaining);
-      }
-    })
-    handleClose();
+    if(user.email === currentProductEmail){
+      fetch(`http://localhost:8080/deleteProduct/${deleteId}`,{
+        method:'DELETE'
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        // console.log("Deleted Data: ",data);
+        // for remove deleted item from client side 
+        if(data.deletedCount>0){
+          const remaining = Products.filter(product => product._id !== deleteId);
+          setProducts(remaining);
+        }
+      })
+      toast.success("Delete Success!",{theme: "colored"});
+      handleClose();
+    }else{
+      toast.error("You did'nt add this item so, you can't delete!",{theme: "colored"});
+      handleClose();
+    }
   }
   return (
     <div className="container position-relative">
@@ -64,7 +78,7 @@ const ManageItems = () => {
             <th>Price/Item</th>
             <th>Supplier</th>
             <th>Description</th>
-            <th>Last Edit By</th>
+            <th>Added by</th>
             <th>Update</th>
             <th>Delete</th>
           </tr>
@@ -83,7 +97,7 @@ const ManageItems = () => {
                   <td>{description}</td>
                   <td>{email}</td>
                   <td className="text-center"><Link to={`/update/${_id}`}>Edit</Link></td>
-                  <td><Button variant="danger" onClick={()=>handleShow(_id)}>Delete</Button></td>
+                  <td><Button variant="danger" onClick={()=>handleShow(_id, email)}>Delete</Button></td>
                 </tr>
             })}
         </tbody>

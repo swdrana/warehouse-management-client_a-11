@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import "./Login.css";  
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
   useSendPasswordResetEmail,
@@ -42,7 +42,6 @@ const Login = () => {
 
   return (
     <div>
-       <ToastContainer />
       <div className="d-flex justify-content-center mb-5">
         <div className="w-25 d-flex flex-column ">
           <h1 className="text-center my-2 pt-4">Please Login</h1>
@@ -71,9 +70,9 @@ const Login = () => {
               onClick={async () => {
                 if (email) {
                   await sendPasswordResetEmail(email);
-                  toast("Reset email send successfully!");
+                  toast.info("Reset email send successfully!",{theme: "colored"});
                 } else {
-                  toast("Please input your email");
+                  toast.error("Please input your email",{theme: "colored"});
                 }
               }}
             >

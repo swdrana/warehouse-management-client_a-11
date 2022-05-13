@@ -10,6 +10,7 @@ import {FcAddImage, FcCurrencyExchange, FcMultipleDevices} from 'react-icons/fc'
 import {BsPencilSquare} from 'react-icons/bs'
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { toast } from "react-toastify";
 
 
 const Update = () => {
@@ -28,8 +29,8 @@ const Update = () => {
   let { _id, name, email, productName, quantity, pricePerItem, supplierName, description, imgLink} = product;
   const handelUpdate = (e) => {
     e.preventDefault();
-    const name = user?.displayName;
-    const email = user.email;
+    const name = product.name;
+    const email = product.email;
     const productName = e.target.productName.value?e.target.productName.value:product.productName;
     const quantity = Number.parseInt(e.target.formBasicQuantity.value?e.target.formBasicQuantity.value:product.quantity);
     const pricePerItem = Number.parseFloat(e.target.pricePerItem.value?e.target.pricePerItem.value:product.pricePerItem);
@@ -51,7 +52,8 @@ const Update = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        alert("Updated!");
+
+      toast.info("Updated Done!",{theme: "colored"});
         e.target.reset();
       });
   };
@@ -73,7 +75,7 @@ const Update = () => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          alert("Updated!");
+          toast.success("1 item delivered!",{theme: "colored"});
         });
   }
   return (
@@ -85,12 +87,13 @@ const Update = () => {
       <Form onSubmit={handelUpdate} className="col-md-8 mt-5 px-5 mx-auto">
         <Form.Group className="mb-2 d-flex" controlId="formBasicName">
             <RiUserReceivedLine size="35px" className="me-4" color="gray"/>
-          <Form.Control type="text" placeholder="Name" value={user?.displayName} disabled/>
+          <Form.Control type="text" placeholder="Name" defaultValue={product.name} disabled/>
         </Form.Group>
         <Form.Group className="mb-2 d-flex" controlId="newEmail">
             <HiOutlineMail size="35px" className="me-4" color="gray"/>
-          <Form.Control type="email" placeholder="Enter email" value={user.email} disabled/>
+          <Form.Control type="email" placeholder="Enter email" defaultValue={product.email} disabled/>
         </Form.Group>
+        
         <Form.Group className="mb-2 d-flex" controlId="productName">
             <FcMultipleDevices size="35px" className="me-4" color="black"/>
           <Form.Control type="text" placeholder="Product Name" />
