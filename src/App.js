@@ -21,12 +21,12 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/blogs' element={<Blogs/>}/>
-        <Route path='/manage-items' element={<ManageItems/>}/>
+        <Route path='/manage-items' element={<RequireAuth><ManageItems/></RequireAuth>}/>
         <Route path='/add-item' element={<RequireAuth><AddItem/></RequireAuth>}/>
         <Route path='/my-items' element={<RequireAuth><MyItems/></RequireAuth>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<Signup/>}/>
-        <Route path='/update/:id' element={<Update/>}/>
+        <Route path='/update/:id' element={<RequireAuth><Update/></RequireAuth>}/>
       </Routes>
       <Footer/>
     </div>
