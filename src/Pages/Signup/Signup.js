@@ -46,8 +46,8 @@ const Signup = () => {
     navigate("/home");
   }
   return (
-    <div className="d-flex justify-content-center my-5">
-      <div className="w-25 d-flex flex-column justify-content-center ">
+    <div className="d-flex justify-content-center my-5 mx-auto w-50">
+      <div className="w-100 d-flex flex-column justify-content-center ">
         <h1 className="text-center">Create Account</h1>
         <Form className="my-3 " onSubmit={handelForm}>
           <Form.Group className="mb-3" controlId="formBasicEmail">

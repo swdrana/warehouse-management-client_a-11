@@ -42,8 +42,8 @@ const Login = () => {
 
   return (
     <div>
-      <div className="d-flex justify-content-center mb-5">
-        <div className="w-25 d-flex flex-column ">
+      <div className="d-flex justify-content-center mb-5 w-50 mx-auto">
+        <div className="w-100 d-flex flex-column ">
           <h1 className="text-center my-2 pt-4">Please Login</h1>
           <Form className="my-3 pt-2" onSubmit={handelLoginForm}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
