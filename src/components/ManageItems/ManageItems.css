@@ -1,5 +1,10 @@
-.add-btn{     
+.add-btn{    
     position: fixed;
-    top: 20vh;
+    top: 15vh;
     right: 5%;
+    transition: 0.5s;
+    text-decoration: none;
+}
+.add-btn:hover{
+    transform: rotate(90deg);
 }
