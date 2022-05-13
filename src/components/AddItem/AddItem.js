@@ -5,8 +5,11 @@ import {HiOutlineMail} from 'react-icons/hi'
 import {MdPersonOutline, MdProductionQuantityLimits} from 'react-icons/md'
 import {FcAddImage, FcCurrencyExchange, FcMultipleDevices} from 'react-icons/fc'
 import {BsPencilSquare} from 'react-icons/bs'
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const AddItem = () => {
+  const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -15,8 +18,8 @@ const AddItem = () => {
   const [imgLink, setImgLink] = useState("");
   const handelAddItem = (e) => {
     e.preventDefault();
-    const name = (e.target.formBasicName.value);
-    const email = (e.target[1].value);
+    const name = user?.displayName;
+    const email = user.email;
     const productName = (e.target[2].value);
     const quantity = Number.parseInt(e.target[3].value);
     const pricePerItem = Number.parseFloat(e.target[4].value);
@@ -49,11 +52,11 @@ const AddItem = () => {
       <Form className="w-50 mx-auto my-5" onSubmit={handelAddItem}>
         <Form.Group className="mb-3 d-flex" controlId="formBasicName">
             <RiUserReceivedLine size="35px" className="me-4" color="gray"/>
-          <Form.Control type="text" placeholder="Name" />
+          <Form.Control type="text" placeholder="Name" value={user?.displayName} disabled/>
         </Form.Group>
         <Form.Group className="mb-3 d-flex" controlId="formBasicEmail">
             <HiOutlineMail size="35px" className="me-4" color="gray"/>
-          <Form.Control type="email" placeholder="Email" />
+          <Form.Control type="email" placeholder="Email" value={user.email} disabled/>
         </Form.Group>
         <Form.Group className="mb-3 d-flex" controlId="productName">
             <FcMultipleDevices size="35px" className="me-4" color="black"/>

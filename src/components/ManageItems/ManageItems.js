@@ -4,7 +4,7 @@ import { Button, Modal, Table } from 'react-bootstrap'
 import paginationFactory from "react-bootstrap-table2-paginator";
 import LoadProducts from "../../hooks/LoadProducts";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import {FcPlus} from 'react-icons/fc';
 const ManageItems = () => {
   const [Products, setProducts] = LoadProducts();
@@ -64,6 +64,7 @@ const ManageItems = () => {
             <th>Price/Item</th>
             <th>Supplier</th>
             <th>Description</th>
+            <th>Last Edit By</th>
             <th>Update</th>
             <th>Delete</th>
           </tr>
@@ -80,6 +81,7 @@ const ManageItems = () => {
                   <td className="text-end">$ {pricePerItem?.toLocaleString('hi-IN', { maximumFractionDigits: 2 })}</td>
                   <td>{supplierName}</td>
                   <td>{description}</td>
+                  <td>{email}</td>
                   <td className="text-center"><Link to={`/update/${_id}`}>Edit</Link></td>
                   <td><Button variant="danger" onClick={()=>handleShow(_id)}>Delete</Button></td>
                 </tr>

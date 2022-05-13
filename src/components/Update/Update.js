@@ -8,9 +8,12 @@ import {HiOutlineMail} from 'react-icons/hi'
 import {MdPersonOutline, MdProductionQuantityLimits} from 'react-icons/md'
 import {FcAddImage, FcCurrencyExchange, FcMultipleDevices} from 'react-icons/fc'
 import {BsPencilSquare} from 'react-icons/bs'
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 
 const Update = () => {
+  const [user, loading, error] = useAuthState(auth);
   const { id } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
@@ -25,8 +28,8 @@ const Update = () => {
   let { _id, name, email, productName, quantity, pricePerItem, supplierName, description, imgLink} = product;
   const handelUpdate = (e) => {
     e.preventDefault();
-    const name = e.target[0].value?e.target[0].value:product.name;
-    const email = e.target.newEmail.value?e.target.newEmail.value:product.email;
+    const name = user?.displayName;
+    const email = user.email;
     const productName = e.target.productName.value?e.target.productName.value:product.productName;
     const quantity = Number.parseInt(e.target.formBasicQuantity.value?e.target.formBasicQuantity.value:product.quantity);
     const pricePerItem = Number.parseFloat(e.target.pricePerItem.value?e.target.pricePerItem.value:product.pricePerItem);
@@ -82,11 +85,11 @@ const Update = () => {
       <Form onSubmit={handelUpdate} className="col-md-8 mt-5 px-5 mx-auto">
         <Form.Group className="mb-2 d-flex" controlId="formBasicName">
             <RiUserReceivedLine size="35px" className="me-4" color="gray"/>
-          <Form.Control type="text" placeholder="Name" />
+          <Form.Control type="text" placeholder="Name" value={user?.displayName} disabled/>
         </Form.Group>
         <Form.Group className="mb-2 d-flex" controlId="newEmail">
             <HiOutlineMail size="35px" className="me-4" color="gray"/>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control type="email" placeholder="Enter email" value={user.email} disabled/>
         </Form.Group>
         <Form.Group className="mb-2 d-flex" controlId="productName">
             <FcMultipleDevices size="35px" className="me-4" color="black"/>
