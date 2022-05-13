@@ -99,6 +99,8 @@ const MyItems = () => {
               <th>Price/Item</th>
               <th>Supplier</th>
               <th>Description</th>
+              <th>Name</th>
+              <th>Added By (E-mail)</th>
               <th>Update</th>
               <th>Delete</th>
             </tr>
@@ -133,6 +135,8 @@ const MyItems = () => {
                   </td>
                   <td>{supplierName}</td>
                   <td>{description}</td>
+                  <td>{name}</td>
+                  <td>{email}</td>
                   <td className="text-center">
                     <Link to={`/update/${_id}`}>Edit</Link>
                   </td>

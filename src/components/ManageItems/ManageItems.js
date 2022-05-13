@@ -87,7 +87,8 @@ const ManageItems = () => {
             <th>Price/Item</th>
             <th>Supplier</th>
             <th>Description</th>
-            <th>Added by</th>
+            <th>Name</th>
+            <th>Added by (E-mail)</th>
             <th>Update</th>
             <th>Delete</th>
           </tr>
@@ -122,6 +123,7 @@ const ManageItems = () => {
                 </td>
                 <td>{supplierName}</td>
                 <td>{description}</td>
+                <td>{name}</td>
                 <td>{email}</td>
                 <td className="text-center">
                   <Link to={`/update/${_id}`}>Edit</Link>
