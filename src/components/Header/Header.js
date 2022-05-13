@@ -6,9 +6,26 @@ import {
   Navbar,
 } from "react-bootstrap";
 import './Header.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../img/logo.png";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { signOut } from "firebase/auth";
+
+
+
 const Header = () => {
+  
+  let navigete = useNavigate();
+  const [user, loading, error] = useAuthState(auth);
+  const loginSignupBTN = ()=>{
+    if(!user){
+      navigete('login');
+    }else{
+      signOut(auth);
+      navigete('/login')
+    }
+  }
   return (
     <div className="top-nav">
       <div className="container">
@@ -28,10 +45,13 @@ const Header = () => {
               <Nav className="d-flex">
                 <Nav.Link to="/manage-items" as={Link}>Manage Items</Nav.Link>
                 <Nav.Link to="/add-item" as={Link}>Add Item</Nav.Link>
-                <Nav.Link to="/my-items" as={Link}>My items</Nav.Link>
+                <Nav.Link to="/my-items" className={user ? "":"d-none"} as={Link}>My items</Nav.Link>
                 <Nav.Link to="/about" as={Link}>About</Nav.Link>
                 <Nav.Link to="/blogs" as={Link}>Blogs</Nav.Link>
-                <Button >{`${false ? "Log-out":"Log-in"} `}</Button>
+
+                <Button variant="outline-danger" onClick={()=>{navigete('signup')}} className={user ?     "signup-btn border-0 rounded-0 ms-2 px-4 d-none ": "signup-btn border-0 rounded-0 ms-2    px-4 "}>Create Account</Button>
+
+                <Button variant="primary" onClick={loginSignupBTN}className="login-btn border-0 rounded-3 ms-2 px-4">{user? "Sign Out " : "Log in"}</Button>
               </Nav>
             </Navbar.Collapse>
           </Container>
