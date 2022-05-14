@@ -168,9 +168,11 @@ const Home = () => {
       <section className="container mx-auto my-5 row">
           <h6 className="text-center">WANT TO SEE</h6>
           <h2 className="text-center mb-5">Our Services</h2>
-        {Products.map((product) => {
-          return <Product key={product._id} product={product}></Product>;
-        })}
+        {
+          Products.slice(0,6)?.map((product) => {
+            return <Product key={product._id} product={product}></Product>;
+          })
+        }
       </section>
       {/* support section  */}
       <section className="support w-100 ">
