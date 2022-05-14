@@ -12,6 +12,7 @@ import { BsPencilSquare } from "react-icons/bs";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const AddItem = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -21,6 +22,13 @@ const AddItem = () => {
   const [supplierName, setSupplierName] = useState("");
   const [description, setDescription] = useState("");
   const [imgLink, setImgLink] = useState("");
+
+  
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/manage-items";
+
+
   const handelAddItem = (e) => {
     e.preventDefault();
     const name = user?.displayName;
@@ -57,8 +65,11 @@ const AddItem = () => {
         console.log(data);
         toast.success("Item Added!", { theme: "colored" });
       });
-
+      if (user) {
+        navigate(from, { replace: true });
+      }
     e.target.reset();
+    
   };
   return (
     <div>
