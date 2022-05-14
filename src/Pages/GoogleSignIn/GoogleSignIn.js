@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import useToken from "../../hooks/useToken";
 import google from "../../img/g-logo.png";
 import Loading from "../Loading/Loading";
 
@@ -17,6 +18,9 @@ const GoogleSignIn = () => {
     if (user) {
         navigate(from, {replace: true });
       }
+    
+    // for JWT Token 
+    // const [token, setToken] = useToken(user);
   return (
     <div>
       <p className="text-danger text-center mt-1">{errorGoogle?.message}</p>
