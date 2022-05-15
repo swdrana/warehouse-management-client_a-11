@@ -1,44 +1,90 @@
 [
   {
-    "_id": 1,
-    "name": "ICT",
-    "prices": 10000,
-    "img": "https://i.ibb.co/g3XCp8T/image.png",
-    "text": "Typically the 10 ICT (Information Communication Tech.) Basics courses span digital technologies associated with web development, multi-media, word processing, chart, database, Internet devices, cyber security, video games, and computer coding."
+    "_id": "627e22edf66938aeeaee3214",
+    "name": "Rana Soft Engineer",
+    "email": "codingbengal@gmail.com",
+    "productName": "Apple Watch Series 7",
+    "quantity": 119,
+    "pricePerItem": 149,
+    "supplierName": "Rana",
+    "description": "Brand: Apple. \nWireless Communication Standard: Bluetooth, 5 GHz Radio Frequency, 802.11bgn, 2.4 GHz Radio Frequency.\nColor: Green Aluminum Case with Clover Sport Band\nConnectivity Technology: USB-C\nOperating System: WatchOS",
+    "imgLink": "https://i.ibb.co/w4CrW9M/image.png"
   },
   {
-    "_id": 2,
-    "name": "Mathematics",
-    "prices": 8000,
-    "img": "https://i.ibb.co/3ChD4Mw/image.png",
-    "text": "Issues in mathematics that many educated person should know to process, evaluate, and understand the numerical and graphical information in our society."
+    "_id": "627e6e2f01983414b1111a85",
+    "name": "Lravel Rana",
+    "email": "laravelrana@gmail.com",
+    "productName": "MacBook Air M1",
+    "quantity": 577,
+    "pricePerItem": 1199,
+    "supplierName": "Rana",
+    "description": "16 GB RAM\n256 GB SSD\nRetina display\n13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch with support for millions of colors\nApple M1 chip\n8-core CPU with 4 perform­ance cores and 4 efficiency cores\n7-core GPU, 8-core GPU\nUp to 15 hours wireless web",
+    "imgLink": "https://i.ibb.co/k6W4Q75/image.png"
   },
   {
-    "_id": 3,
-    "name": "Physics",
-    "prices": 4000,
-    "img": "https://i.ibb.co/wBpspLF/image.png",
-    "text": "A great intro to the scientific method and some major in physics, including makes and motion, energy, gravity, electricity and magnetism, thermodynamics, and optics. Hands-on activities and projects are an important part of this course which aims to prepare future teachers to bring research activities to their classes. 3 lecture hrs and 1 75-minute activity period."
+    "_id": "627e71ac01983414b1111a86",
+    "name": "algo rana",
+    "email": "algorana01@gmail.com",
+    "productName": "iPhone 13 Pro Max",
+    "quantity": 87,
+    "pricePerItem": 899,
+    "supplierName": "Rana",
+    "description": "NETWORK: GSM / CDMA / HSPA / EVDO / LTE/ 5G\nBODY: 160.8 x 78.1 x 7.7 mm (6.33 x 3.07 x 0.30 in)\nWeight: 240 g (8.47 oz)\nSIM: Single SIM (Nano-SIM and/or eSIM)\nSize: 6.7 inches, 109.8 cm2(~87.4% screen-to-body ratio)\nChipset: Apple A15 Bionic (5 nm)\nCPU: Hexa-core (2 + 4)\nInternal MEMORY: 256GB 6GB RAM",
+    "imgLink": "https://i.ibb.co/PmrVg8p/image.png"
   },
   {
-    "_id": 4,
-    "name": "MS Word",
-    "prices": 2000,
-    "img": "https://i.ibb.co/wp5Wh5s/image.png",
-    "text": "Individuals will learn to use Microsoft Phrase to produce professional-looking documents. Features integrated are typing, format, editing, document space, margins, page numbering and saving a document."
+    "_id": "627e759901983414b1111a87",
+    "name": "algo rana",
+    "email": "algorana01@gmail.com",
+    "productName": "Asus Zenbook 17 Fold",
+    "quantity": 267,
+    "pricePerItem": 1449,
+    "supplierName": "Zaman",
+    "description": "Intel® Core™ i7-1250U Processor.\n17.3-inch, 2560 x 1920 FOLED.\nIntel® Iris Xe Graphics.\n16GB LPDDR5 onboard, Memory.\n1TB M.2 NVMe™ PCIe® 4.0 Performance SSD.\nColor Tech Black.\nWindows 11 Home.",
+    "imgLink": "https://i.ibb.co/GVw8x8N/image.png"
   },
   {
-    "_id": 5,
-    "name": "MS Excel",
-    "prices": 2000,
-    "img": "https://5.imimg.com/data5/KO/UM/GLADMIN-66275087/ms-excel-basic-computer-courses-500x500.png",
-    "text": "This particular training provides all of the tools necessary in order to create and make use of basic spreadsheets. Individuals should receive an summary of the user interface and learn the particular various techniques for getting into and editing information. Additionally, participants will certainly learn the numerous ways to create easy formulas."
+    "_id": "627e7ac601983414b1111a88",
+    "name": "algo rana",
+    "email": "algorana01@gmail.com",
+    "productName": "LG 31.5'' HD Monitor",
+    "quantity": 485,
+    "pricePerItem": 249.99,
+    "supplierName": "Zaman",
+    "description": "31.5'' Full HD IPS Monitor with AMD FreeSync™.\nKEY FEATURES\nFull HD (1920 x 1080). \nIPS Display AMD FreeSync™. \nReader Mode Flicker Safe OnScreen Control Wall Mountable.",
+    "imgLink": "https://i.ibb.co/k3zBz4n/image.png"
   },
   {
-    "_id": 6,
-    "name": "Data Structures & Algorithms",
-    "prices": 15000,
-    "img": "https://i.ibb.co/TcjQ97H/image.png",
-    "text": "A summary of data framework concepts, arrays, collection, queues, trees, and graphs. Discussion of various implementations of these data items, programming styles, and run-time representations. Program also examines methods for sorting, looking and some chart algorithms."
+    "_id": "627f1c75fea7e12a800bca69",
+    "name": "Rana Soft Engineer",
+    "email": "codingbengal@gmail.com",
+    "productName": "iPad Pro M1",
+    "quantity": 345,
+    "pricePerItem": 899,
+    "supplierName": "Masud",
+    "description": "Key Features\nMPN: MHNF3LL/A\nModel: iPad Pro 12.9 Inch\nLiquid Retina XDR Display\nProcessor: M1 (8 Cores)\nScreen Size: 12.9 Inch\nStorage: 128GB",
+    "imgLink": "https://i.ibb.co/hd2n79R/image.png"
+  },
+  {
+    "_id": "627f1e50fea7e12a800bca6a",
+    "name": "Rana Soft Engineer",
+    "email": "codingbengal@gmail.com",
+    "productName": "Redmi Note 10 Pro",
+    "quantity": 543,
+    "pricePerItem": 199.99,
+    "supplierName": "Masud",
+    "description": "Rear Camera. 48MP Quad Camera Array.\nFront Camera. 13MP In-display Front Camera.\nProcessor. Qualcomm® Snapdragon™ 678. \nOperating system. MIUI 12 is based on Android 11.\nStorage and RAM. 6GB + 128GB. ...\nDisplay. 16.33cm(6.43) FHD+ SUPER AMOLED Display.\nCharging and battery. 5000mAh Li-Polymer Battery.",
+    "imgLink": "https://i.ibb.co/WVDYPkq/image.png"
+  },
+  {
+    "_id": "627f21cffea7e12a800bca6b",
+    "name": "algo rana",
+    "email": "algorana01@gmail.com",
+    "productName": "GoPro Hero 10",
+    "quantity": 435,
+    "pricePerItem": 499.99,
+    "supplierName": "Masud",
+    "description": "Max Superview. The GoPro Hero 10 features a 4:3 format sensor, but most video these days is displayed in a 16:9 aspect ratio.\n24 frames per second. The ability to shoot at 24 fps is a welcome update to the Hero 10.\nMax Lens Mod support.\nPerformance boost.\nEnduro battery.\nFinal thoughts.",
+    "imgLink": "https://i.ibb.co/yqGT8NP/image.png"
   }
 ]
