@@ -95,8 +95,8 @@ const ManageItems = () => {
             <th>Price/Item</th>
             <th>Supplier</th>
             <th>Description</th>
-            <th>Name</th>
-            <th>Added by (E-mail)</th>
+            <th>Last Editor</th>
+            <th>Last Editor (email)</th>
             <th>Update</th>
             <th>Delete</th>
           </tr>

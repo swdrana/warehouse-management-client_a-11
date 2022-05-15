@@ -39,8 +39,12 @@ const Update = () => {
   } = product;
   const handelUpdate = (e) => {
     e.preventDefault();
-    const name = product.name;
-    const email = product.email;
+    const name = e.target.formBasicName.value
+    ? e.target.formBasicName.value
+    : product.name;
+    const email = e.target.newEmail.value
+    ? e.target.newEmail.value
+    : product.email;
     const productName = e.target.productName.value
       ? e.target.productName.value
       : product.productName;
@@ -134,7 +138,7 @@ const Update = () => {
             <Form.Control
               type="text"
               placeholder="Name"
-              defaultValue={product.name}
+              defaultValue={user.displayName}
               disabled
             />
           </Form.Group>
@@ -143,7 +147,7 @@ const Update = () => {
             <Form.Control
               type="email"
               placeholder="Enter email"
-              defaultValue={product.email}
+              defaultValue={user.email}
               disabled
             />
           </Form.Group>
