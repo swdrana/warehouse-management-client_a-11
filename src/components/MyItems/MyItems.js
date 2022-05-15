@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
+import Loading from "../../Pages/Loading/Loading";
 import Product from "../Product/Product";
 
 const MyItems = () => {
@@ -62,6 +63,12 @@ const MyItems = () => {
         setMyItems(data);
       });
   }, []);
+
+  // for loading spinner 
+  if(myItems.length===0){
+    return <Loading/>
+  }
+
   return (
     <div className="container mb-5">
       <div className="row">

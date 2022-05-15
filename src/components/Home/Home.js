@@ -16,12 +16,18 @@ import img from "../../img/Businessman-pana.svg";
 import signature from "../../img/signature.png";
 import deal from "../../img/Business deal-bro.svg";
 import { Button, Modal } from "react-bootstrap";
+import Loading from "../../Pages/Loading/Loading";
 const Home = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const [Products] = LoadProducts();
+
+  // for loading spinner 
+  if(Products.length===0){
+    return <Loading/>
+  }
   return (
     <div>
       {/* carousel section  */}

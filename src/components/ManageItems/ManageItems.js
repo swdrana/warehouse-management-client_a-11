@@ -9,9 +9,11 @@ import { FcPlus } from "react-icons/fc";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
+import Loading from "../../Pages/Loading/Loading";
 const ManageItems = () => {
   const [user, loading, error] = useAuthState(auth);
   const [Products, setProducts] = LoadProducts();
+
   const columns = [
     { dataField: "productName", text: "Product Name" },
     { dataField: "quantity", text: "Available Quantity" },
@@ -68,6 +70,12 @@ const ManageItems = () => {
       handleClose();
     }
   };
+
+  // for loading spinner 
+  if(Products.length===0){
+    return <Loading/>
+  }
+  
   return (
     <div className="container position-relative">
       <h2 className="text-center my-4">Manage Items</h2>
